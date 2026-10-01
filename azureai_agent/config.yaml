@@ -2,6 +2,14 @@ embeddings:
  provider: openai             
  model: text-embedding-3-small
 
+skills:
+ skills_dir: ./skills
+
+memory:
+ db_path: .azureai_agent/memory/memory.db
+ summarize_at_tokens: 4000
+ keep_last_messages: 20
+
 
 chromadb:
  persist_dir: .chromadb/
