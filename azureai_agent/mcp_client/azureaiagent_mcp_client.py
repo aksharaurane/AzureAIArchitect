@@ -1,5 +1,5 @@
 from langchain_mcp_adapters.client import MultiServerMCPClient
-from azureai_agent.mcp.educosys_mcp_config import load_educosys_mcp_configs
+from azureai_agent.mcp_client.azureaiagent_mcp_config import load_azureaiagent_mcp_configs
 from azureai_agent.observability.logger import get_logger
 
 
@@ -14,3 +14,4 @@ async def get_azureaiagent_mcp_tools() -> list:
   tools = await client.get_tools()
   logger.info(f"Loaded {len(tools)} tools from MCP servers")
   return tools
+

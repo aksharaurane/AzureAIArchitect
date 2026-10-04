@@ -5,7 +5,7 @@ from azureai_agent.llm.factory import get_llm
 from azureai_agent.agent.tools import search_codebase
 from azureai_agent.observability.logger import get_logger
 from azureai_agent.skillrepo.skill_tools import load_skill, build_skills_prompt
-from azureai_agent.mcp.azureaiagent_mcp_client import get_azureaiagent_mcp_tools
+from azureai_agent.mcp_client.azureaiagent_mcp_client import get_azureaiagent_mcp_tools
 
 logger = get_logger(__name__)
 
