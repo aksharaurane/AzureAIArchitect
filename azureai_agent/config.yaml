@@ -3,7 +3,8 @@ embeddings:
  model: text-embedding-3-small
 
 skills:
- skills_dir: ./skills
+ skills_dir: .azureai_agent/skills
+
 
 memory:
  db_path: .azureai_agent/memory/memory.db
@@ -12,8 +13,9 @@ memory:
 
 
 chromadb:
- persist_dir: .chromadb/
+ persist_dir: .azureai_agent/chromadb/
  collection_name: codebase
+
 
 
 elasticsearch:
@@ -22,7 +24,7 @@ elasticsearch:
 
 llm:
  provider: openai        # openai | anthropic
- model: gpt-4o
+ model: gpt-5.5
 
 vector_store:
  provider: qdrant

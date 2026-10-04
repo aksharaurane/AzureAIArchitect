@@ -39,20 +39,20 @@ def get_registry() -> SkillRegistry:
 
 
    skills_dir resolution order:
-     1. Read "skills.skills_dir" from config.yaml  →  e.g. ".educosys/skills"
+     1. Read "skills.skills_dir" from config.yaml  →  e.g. ".azureai_agent/skills"
      2. Resolve relative to Path.cwd()             →  the target project root
-        (azureai_agent is invoked from the project being analysed, so cwd()
+        (ai agent is invoked from the project being analysed, so cwd()
          IS the target project, not the educosys package itself)
 
 
    Example:
-     User runs azureai_agent from /home/user/my_project/
-     config.yaml says skills_dir: .educosys/skills
-     → skills are loaded from /home/user/my_project/.educosys/skills/
+     User runs educosys_claude from /home/user/my_project/
+     config.yaml says skills_dir: .azureai_agent/skills
+     → skills are loaded from /home/user/my_project/.azureai_agent/skills/
    """
    global _registry
    if _registry is None:
-       skills_dir = Path.cwd() / config.get("skills", {}).get("skills_dir", ".educosys/skills")
+       skills_dir = Path.cwd() / config.get("skills", {}).get("skills_dir", ".azureai_agent/skills")
        _registry = SkillRegistry(skills_dir)
        _registry.load()
        logger.info(f"SkillRegistry initialized from: {skills_dir}")
