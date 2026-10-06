@@ -16,6 +16,13 @@
          "${CWD}"
        ],
        "transport": "stdio"
-     }
+     },
+     "bicep": {
+      "command": "dnx",
+      "args": [
+        "-y",
+        "Azure.Bicep.McpServer"
+      ]
+    }
  }
 }
